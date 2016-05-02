@@ -1,29 +1,33 @@
 <article ng-repeat="post in filteredPosts = ( PostsCtrl.data.posts |
                                               filter:vs.query |
                                               filter:vs.filterFavorites |
-                                              orderBy:vs.sort:vs.order )">
+                                              orderBy:(vs.sort || 'votes'):vs.order )">
 
     <div class="media well">
         <div class="media-left">
-            <a ui-sref="post({id: post.id})">
-                <img class="media-object posts-image" ng-src="{{post.image}}">
-            </a>
+            <img class="media-object posts-image" ng-src="{{post.image}}">
         </div>
         <div class="media-body">
-            <h4 class="media-heading posts-heading" ui-sref="post({id: post.id})">{{post.title}}</h4>
+            <h4 class="media-heading posts-heading">{{post.title}}</h4>
             <p>{{post.author}}</p>
 
             <rc-vote post="{id: post.id, votes: post.votes}"></rc-vote>
 
-            <i aria-hidden="true" ng-click="post.favorite = !post.favorite" ng-class="{ 'fa fa-heart-o': !post.favorite,
-       'fa fa-heart posts-favorite': post.favorite}" class="fa fa-heart-o"></i>
+            <i aria-hidden="true" ng-click="post.favorite = !post.favorite"
+               ng-class="{ 'fa fa-heart-o': !post.favorite,
+                           'fa fa-heart posts-favorite': post.favorite}"></i>
 
             <p>{{post.description}}</p>
 
             <i class="fa fa-clock-o" aria-hidden="true"></i>
             {{post.date}}
 
+            <comment></comment>
         </div>
     </div>
 
 </article>
+
+<div ng-hide="filteredPosts.length > 0">
+  <img ng-src="assets/images/move_along.jpg">
+</div>

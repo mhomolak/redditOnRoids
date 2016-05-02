@@ -2,7 +2,7 @@ angular.module('RedditClone').directive('comment', function() {
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'directive/comment/comment.html',
+        templateUrl: '/directives/comment/comment.html',
         link: function(scope, element, attrs, fn) {
             scope.comments = scope.post.comments;
         },
