@@ -1,0 +1,14 @@
+<span>
+    <i ng-click="fn.upVote(VoteCtrl.post.id)"
+       class="fa fa-arrow-up post-vote"
+       aria-hidden="true"></i>
+
+    <i ng-click="fn.downVote(VoteCtrl.post.id)"
+       class="fa fa-arrow-down post-vote"
+       aria-hidden="true"></i>
+
+    <span ng-class="{ 'post-positive': VoteCtrl.post.votes > 0,
+                      'post-negative': VoteCtrl.post.votes < 0 }">
+        {{VoteCtrl.post.votes}}
+    </span>
+</span>

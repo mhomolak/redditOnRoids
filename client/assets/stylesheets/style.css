@@ -1,0 +1,18 @@
+.posts-image {
+  width: 300px;
+}
+
+nav {
+  z-index: 1;
+}
+
+.header-submitPost {
+  transition: .15s linear;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  z-index: -1;
+}
+
+.header-submitPost.ng-hide {
+  transform: translateY(-90%);
+}
