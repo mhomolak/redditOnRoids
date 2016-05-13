@@ -5,7 +5,10 @@ angular.module('RedditClone')
     function PostsController ($scope, postsService) {
         var vm = this;
         vm.data = {};
-        vm.data.posts = postsService.posts;
+
+        postsService.posts().then(function(res) {
+          vm.data.posts = res.data;
+        })
     }
 
     function PostsDirective () {
