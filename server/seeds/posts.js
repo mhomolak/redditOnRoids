@@ -6,7 +6,6 @@ exports.seed = function(knex, Promise) {
 
     // Inserts seed entries
     knex('posts').insert({
-      id: 1,
       favorite: false,
       title: 'A world of possibilities.',
       author: 'Jimmy Bluefox',
@@ -16,7 +15,6 @@ exports.seed = function(knex, Promise) {
     }),
 
     knex('posts').insert({
-      id: 2,
       favorite: true,
       title: 'Hello, funny guy!',
       author: 'Sally Tigerfish',
@@ -26,7 +24,6 @@ exports.seed = function(knex, Promise) {
     }),
 
     knex('posts').insert({
-      id: 3,
       favorite: false,
       title: 'Paradiso is waiting...',
       author: 'Dax Killingbird',
