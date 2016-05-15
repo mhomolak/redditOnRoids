@@ -1,9 +1,5 @@
 {
   "name": "RedditClone",
-  "authors": [
-    "Fabio Anselmo <fabio.a.anselmo@gmail.com>"
-  ],
-  "description": "Galvanize angularjs reddit-clone example.",
   "main": "",
   "license": "MIT",
   "homepage": "",
