@@ -29,6 +29,19 @@ angular.module('RedditClone').config(function($stateProvider, $urlRouterProvider
             }
           }
         })
+        .state('login', {
+          url: '/login',
+          views: {
+            'header': {
+              templateUrl: 'partials/header/header.html',
+              controller: 'HeaderCtrl'
+            },
+            'login': {
+              templateUrl: 'partials/login/login.html',
+              controller: 'LoginController'
+            }
+          }
+        })
         .state('404', {
           url: '/404',
           views: {

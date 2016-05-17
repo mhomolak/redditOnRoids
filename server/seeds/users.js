@@ -1,3 +1,5 @@
+var bcrypt = require('bcrypt');
+var passwordHash = bcrypt.hashSync('password', 4);
 
 exports.seed = function(knex, Promise) {
   return Promise.join(
@@ -8,7 +10,7 @@ exports.seed = function(knex, Promise) {
     knex('users').insert({
       name: 'boss',
       email: 'boss@test.com',
-      password_hash: 'password'
+      password_hash: passwordHash
     })
   );
 };
