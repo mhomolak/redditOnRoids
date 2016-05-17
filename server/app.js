@@ -5,7 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var app = express();
+var signup = require('./routes/signup.js')
 var posts = require('./routes/posts.js');
+
 
 // view engine setup
 app.set('view engine', 'jade');
@@ -16,6 +18,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use('/api/v1/users', signup);
 app.use('/api/v1', posts);
 
 app.use(express.static(path.join(__dirname, '../client')));
