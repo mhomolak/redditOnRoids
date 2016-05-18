@@ -5,8 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var app = express();
+require('dotenv').config();
 var signup = require('./routes/signup.js')
 var posts = require('./routes/posts.js');
+var login = require('./routes/login.js');
 
 
 // view engine setup
@@ -19,7 +21,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/api/v1/users', signup);
+app.use('/users', login);
 app.use('/api/v1', posts);
+
 
 app.use(express.static(path.join(__dirname, '../client')));
 app.use('/bower_components',  express.static(__dirname + '../client/bower_components'));

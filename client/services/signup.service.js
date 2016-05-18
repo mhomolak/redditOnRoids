@@ -4,6 +4,7 @@ angular.module('RedditClone')
 console.log("test");
     var signUpService = {
       sign: function () {
+        console.log('in signup factory');
         return $http.post(API + '/users/signup');
       }
     }

@@ -7,7 +7,11 @@
         $http.post('http://localhost:3000/users/login', $scope.user)
           .then(function (response) {
             $window.localStorage.setItem('token', response.data.token);
-            $location.path('/login')
+            $location.path('/')
+          })
+          .catch(function () {
+            console.log($scope);
+            $scope.errah = 'cool'
           })
       }
     })

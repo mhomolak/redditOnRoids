@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 
 
 router.post('/signup', function(req, res, next) {
-  console.log("users.js");
+  console.log("signup.js");
   const errors = []
   if (!req.body.email || !req.body.email.trim()) errors.push("Email can't be blank");
   if (!req.body.name || !req.body.name.trim()) errors.push("Name can't be blank");
